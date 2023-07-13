@@ -1,2 +1,11 @@
 @import './scss/reset';
 @import './scss/variables';
+
+html {
+  font-family: $montserrat;
+}
+
+body {
+  background-color: $veryLightGray;
+  padding: 0 16px;
+}
