@@ -10,15 +10,27 @@
   float: left;
 
   h1 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-bottom: 6px;
     font-weight: $bold;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
+  }
+
+  button {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    color: #f5ba13;
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
   }
 }

@@ -1,0 +1,13 @@
+@import "../../../scss/variables";
+
+form {
+  input {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 2em;
+    font-family: inherit;
+    resize: none;
+  }
+}
