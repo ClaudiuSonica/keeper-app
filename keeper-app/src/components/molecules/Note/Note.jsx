@@ -2,14 +2,19 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Note.scss";
-import Button from "../../atoms/Button/Button";
+
 
 const Note = (props) => {
+
+  const handleClick = () => {
+    props.onDelete(props.id);
+  }
+
   return (
     <div className="note">
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <Button text="Delete" />
+      <button onClick={handleClick}>DELETE</button>
     </div>
   );
 };

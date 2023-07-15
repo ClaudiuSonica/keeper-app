@@ -1,17 +1,50 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from "react";
-import Textarea from "../../atoms/Textarea/Textarea";
-import Button from "../../atoms/Button/Button";
-import Input from "../../atoms/Input/Input";
+import React, { useState } from "react";
 import "./CreateArea.scss";
 
-const CreateArea = () => {
+const CreateArea = (props) => {
+  const [note, setNote] = useState({
+    title: "",
+    content: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNote((prevNote) => {
+      return {
+        ...prevNote,
+        [name]: value,
+      };
+    });
+  };
+
+  const submitNote = (e) => {
+    e.preventDefault();
+    props.onAdd(note);
+    setNote({
+      title: "",
+      content: "",
+    });
+  };
+
   return (
     <>
       <form>
-        <Input name="title" placeholder="Title" />
-        <Textarea name="content" placeholder="Take a note..." />
-        <Button text='Add'/>
+      <input
+          name="title"
+          onChange={handleChange}
+          value={note.title}
+          placeholder="Title"
+        />
+        <textarea
+          name="content"
+          onChange={handleChange}
+          value={note.content}
+          placeholder="Take a note..."
+          rows="3"
+        />
+        <button onClick={submitNote}>Add</button>
       </form>
     </>
   );
